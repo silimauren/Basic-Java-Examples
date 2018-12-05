@@ -1,0 +1,53 @@
+import javax.swing.*;
+
+public class whichday {
+
+    /**
+You will learn the name of day for given short date(date format for this program :yyyy/mm/dd)
+     
+     */
+public static void main(String[] args) {
+   
+JOptionPane.showMessageDialog(null,"Wellcome Day Prediction Program. You can learn the name of day if you enter correct informations \nRebember!!!!:\nJanuary - 31 days\nFebruary - 28 days in a common year and 29 days in leap years\nMarch - 31 days\nApril - 30 days\nMay - 31 days\nJune - 30 days\nJuly - 31 days\nAugust - 31 days\nSeptember - 30 days\nOctober - 31 days\nNovember - 30 days\nDecember - 31 days");   
+ int year=Integer.valueOf(JOptionPane.showInputDialog("Enter year!:"));
+ int k=year%7;
+ int j=year/100;
+ int month=Integer.valueOf(JOptionPane.showInputDialog("Enter month # of year:"));
+ if(month==1){
+     month=13;
+     k--;
+     
+     }
+ if(month==2){
+     month=14;
+     k--;   
+     
+ }
+ int q=Integer.valueOf(JOptionPane.showInputDialog("Enter day number of month!(1-31):"));
+ int h=(q+((26*(month+1))/10)+k+(k/4)+j/4+5*j)%7;
+
+       switch (h) {
+           case 0:
+          JOptionPane.showMessageDialog(null,"it is Friday"+" "+"for"+" "+q+"/"+month+"/"+year);     
+               break;
+           case 1:
+               JOptionPane.showMessageDialog(null,"it is Saturday"+" "+"for"+" "+q+"/"+month+"/"+year); 
+               break;
+           case 2:
+              JOptionPane.showMessageDialog(null,"it is Sunday"+" "+"for"+" "+q+"/"+month+"/"+year); 
+               break;
+           case 3:
+               JOptionPane.showMessageDialog(null,"it is Monday"+" "+"for"+" "+q+"/"+month+"/"+year); 
+               break;
+           case 4:
+               JOptionPane.showMessageDialog(null,"it is Tuesday"+" "+"for"+" "+q+"/"+month+"/"+year); 
+                break;
+           case 5:
+           JOptionPane.showMessageDialog(null,"it is Wednesday"+" "+"for"+" "+q+"/"+month+"/"+year); 
+               break;
+           default:
+               JOptionPane.showMessageDialog(null,"it is Thursday"+" "+"for"+" "+q+"/"+month+"/"+year); 
+               break;
+       }
+   }
+    }
